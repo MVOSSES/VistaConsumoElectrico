@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    tools:context=".MainActivity"
+    android:id="@+id/main">
+
+
+    <ImageView
+        android:id="@+id/imgConsumo"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:contentDescription="img1"
+        android:src="@drawable/energia_consumo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="50dp"/>
+
+    <TextView
+        android:id="@+id/texto1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consumo Actual (en Kwh):"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/consumo_actual"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgConsumo" />
+
+    <TextView
+        android:id="@+id/consumo_actual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto1" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:contentDescription="img2"
+        android:src="@drawable/energia_coste1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consumo_actual"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/texto2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Costes Asociados al consumo:"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/costo_aproximado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+
+    <TextView
+        android:id="@+id/costo_aproximado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$0.00"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto2" />
+
+    <ImageView
+        android:id="@+id/energHoras"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:contentDescription="img3"
+        android:src="@drawable/energia_tiempo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/costo_aproximado"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/texto3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tiempo de uso (En horas):"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/horas_uso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/energHoras" />
+
+    <TextView
+        android:id="@+id/horas_uso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="0 horas"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto3" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:max="100"
+        android:progressDrawable="@drawable/barra"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@id/horas_uso" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnConsumo"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/azul"
+            android:paddingHorizontal="20dp"
+            android:text="Revisar consumo"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
